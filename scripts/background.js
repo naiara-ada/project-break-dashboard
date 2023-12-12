@@ -7,4 +7,4 @@ const getBackground = () =>{
 
 getBackground();
 
-//const intervalBackground = setInterval(getBackground,15000);
+const intervalBackground = setInterval(getBackground,15000);

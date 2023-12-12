@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/styles.css">
-    <title>Document</title>
+    <title>My Project</title>
 </head>
 <body>
     <header class="headerclass" >
@@ -21,6 +21,19 @@
                 <div class="dateClass"> </div>
                 
             </div>
+        </section>
+        <section class="containerPass">
+                <p>Crea tu contraseña segura <span class="material-symbols-outlined">lock</span></p>
+                <div class="passwordframe">
+                    <p>Numero de caracteres de la contraseña</p>
+                    <div class="formclass">
+                        <input type="number" min="12" max="50" class="inputnumber" id="inputnumber" value ="12">
+                        <button id="btnPassword" class="btnPassword">Generar Contraseña</button>
+                    </div>
+                    <p id="passwordgenerated"></p>
+    
+                </div>
+    
         </section>
 
     </main>
