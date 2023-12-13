@@ -114,6 +114,10 @@ Crea una página que tendrá lo siguiente:
 - Este es el `base URL` al que tendréis que acceder `http://api.weatherapi.com/v1` añadiremos detrás lo que necesitemos. 
  - Este es un ejemplo de endpoint con la APIKEY y la ciudad. Solo habría que cambiar los datos de `${apiKey}` por la nuestra y `${ciudad}` por la elegida por nosotros `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&aqi=no`
 - `fetch` para hacer peticiones a la API.
+${apiKey}
+f760f80c0aa24263834120948231312
+
+
 
 ### PISTAS Y CONSEJOS
 - La URL base es `http` cámbiala desde el inicio por `https` para no tener problemas en el futuro de bloqueos de seguridad.

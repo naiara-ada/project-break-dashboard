@@ -61,7 +61,10 @@ body{
     background-repeat: no-repeat;
     
 }
-
+.mainsection{
+    display: flex;
+    
+}
 .headerclass{
     display: flex;
     gap: 15px;
@@ -222,4 +225,47 @@ box-shadow: 15px 15px 34px -16px rgba(255,255,255,0.64);
     top:0%;
     left:87%;
     cursor: pointer;
+}
+
+.containerWeather{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:15px;
+    width: 500px;
+    height: 300px;
+    background-color: #66656596;
+    border-radius: 10px;
+}
+
+.conditionweather{
+    color:chocolate;
+}
+
+.currenteWeathercontainer{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+}
+.currentgrades{
+    font-size: 40px;
+}
+
+.weatheroptions{
+    display: flex;
+    flex-direction: column;
+}
+
+.weatherperhourID{
+    display: flex;
+    width: 490px;
+    gap: 5px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+.hourweatherclass{
+    display: flex;
+    flex-direction: column;
 }
