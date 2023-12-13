@@ -53,6 +53,6 @@ const getPhrase = (hours, minutes)=>{
 }
 
 
-
+getTime();
 const intervalTime = setInterval(getTime,1000);
 
