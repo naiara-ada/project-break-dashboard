@@ -34,7 +34,7 @@ const printLocation = (location, current)=>{
 }
 
 const printWeather = (data)=>{
-    //console.log(data)
+    
     const {location, current, forecast} = data;
     const {day, hour} = forecast.forecastday[0];       
    
@@ -46,7 +46,7 @@ const printWeather = (data)=>{
 
 const getweather = async (location)=>{
     try{
-        const response = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=f760f80c0aa24263834120948231312&q=${location}&aqi=no&lang=es`)
+        const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=f760f80c0aa24263834120948231312&q=${location}&aqi=no&lang=es`)
         if(!response.ok){
             throw new Error('Error en la solicitud')
         }
