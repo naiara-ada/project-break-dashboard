@@ -1,8 +1,19 @@
 const locationID = document.getElementById('locationID');
 const currentWeatherID = document.getElementById('currentWeatherID');
 const weatherperhourID = document.getElementById('weatherperhourID');
-const cityButtonID = document.getElementById('cityButtonID');
-console.log(cityButtonID);
+let URLactual = window.location;
+console.log(URLactual)
+
+if (URLactual.pathname == '/project-break-dashboard/weather.html'){
+    const cityButtonID = document.getElementById('cityButtonID');
+
+    cityButtonID.addEventListener('click', ()=>{
+        const selectcityID = document.getElementById('selectcityID').value;
+        getweather(selectcityID)
+        
+    })
+}
+
 
 const printweatherhours = (hours)=>{
     let time;
