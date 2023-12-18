@@ -1,6 +1,8 @@
 const locationID = document.getElementById('locationID');
 const currentWeatherID = document.getElementById('currentWeatherID');
 const weatherperhourID = document.getElementById('weatherperhourID');
+const cityButtonID = document.getElementById('cityButtonID');
+console.log(cityButtonID);
 
 const printweatherhours = (hours)=>{
     let time;

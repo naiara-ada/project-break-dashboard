@@ -6,7 +6,7 @@ const weeksDay = ['domingo', 'lunes','martes','miercoles','jueves', 'viernes','s
 const getactualPage = ()=>{
     let URLactual = window.location;
     let indexpage;
-
+    console.log(URLactual)
     URLactual.pathname == '/index.html' ? indexpage = true : indexpage = false;
 
     return indexpage;

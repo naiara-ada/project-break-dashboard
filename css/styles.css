@@ -84,6 +84,7 @@ body{
 }
 .sectionclass{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 600px ;
@@ -211,7 +212,6 @@ box-shadow: 15px 15px 34px -16px rgba(255,255,255,0.64);
 .btnLink{
     width: 100%;
     height: 35px;
-    
     border: none;
     border-radius: 5px;
     background-color: #1B66C9;
@@ -271,7 +271,31 @@ box-shadow: 15px 15px 34px -16px rgba(255,255,255,0.64);
 }
 
 /* WEATHER */
+.selectcity{
+    display: flex;
+    gap: 5px;
+    margin-bottom: 20px;
+    width: 350px;
+    
+}
+.inputcity{
+    width: 200px;
+    height: 40px;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+}
 
+.btnweather{
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1B66C9;
+    color:#fff;
+    font-size: 20px;
+    cursor: pointer;
+}
 .containerWeather{
     display: flex;
     flex-direction: column;
