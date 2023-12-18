@@ -1,16 +1,14 @@
 const locationID = document.getElementById('locationID');
 const currentWeatherID = document.getElementById('currentWeatherID');
 const weatherperhourID = document.getElementById('weatherperhourID');
-let URLactual = window.location;
-console.log(URLactual)
 
+//controlamos la pagina actual ya elegir la ciudad del tiempo solo esta disponible en la weather.html 
+let URLactual = window.location;
 if (URLactual.pathname == '/project-break-dashboard/weather.html'){
     const cityButtonID = document.getElementById('cityButtonID');
-
     cityButtonID.addEventListener('click', ()=>{
         const selectcityID = document.getElementById('selectcityID').value;
-        getweather(selectcityID)
-        
+        getweather(selectcityID)        
     })
 }
 
@@ -24,8 +22,7 @@ const printweatherhours = (hours)=>{
                 <p>${time}</p>
                 <img src="https:${hour.condition.icon}" alt="${hour.condition.text}" />
                 <p class="conditionweather">${hour.temp_c}ºC</p>
-            </div>
-        `
+            </div> `
     })
 }
 
@@ -37,8 +34,7 @@ const printcurrentWeather = (current, day)=>{
             <p>Precipitación: ${day.daily_chance_of_rain}%</p>
             <p>Humedad: ${day.avghumidity}%</p>
             <p>Viento: ${day.maxwind_kph} Km/h</p>
-        </div>
-     `
+        </div> `
 }
 
 const printLocation = (location, current)=>{
@@ -47,7 +43,6 @@ const printLocation = (location, current)=>{
 }
 
 const printWeather = (data)=>{
-    
     const {location, current, forecast} = data;
     const {day, hour} = forecast.forecastday[0];       
    

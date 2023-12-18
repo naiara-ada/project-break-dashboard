@@ -24,8 +24,7 @@ const printlinks = () =>{
             containeritems.innerHTML += ` 
                 <div class="itemclass" ><a href="${link}" target="_blank">${name}</a> 
                 <div class="deleteItem" value="${i}">x</div>   
-                </div>       
-            `;                
+                </div>  `;                
             });
         const deleteItems= document.querySelectorAll('.deleteItem');
         deleteItems.forEach((item)=>{
@@ -50,9 +49,7 @@ btnLinkID.addEventListener('click', ()=>{
         
         listlinks == null ? listlinks = [newlink] : listlinks.push(newlink)
         
-        localStorage.setItem('savedlinks', JSON.stringify(listlinks))
-
-        
+        localStorage.setItem('savedlinks', JSON.stringify(listlinks))        
     }  
     printlinks();  
 })

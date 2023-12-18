@@ -74,7 +74,7 @@ body{
     align-content: center;
     gap: 15px;
     padding: 15px;
-    height: 80px;
+    height: 40px;
 }
 .headerclass a{
     font-size: 25px;
@@ -87,7 +87,8 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 600px ;
+    height: 400px;
+    margin-bottom: 150px;
 }
 .rightsection{
     display: flex;
@@ -141,12 +142,12 @@ box-shadow: 15px 15px 34px -16px rgba(255,255,255,0.64);
     flex-direction: column;
     gap: 15px;
     width: 400px;
-    padding: 20px;
+    padding: 10px;
     background-color: #66656596;
     border-radius: 10px;
     -webkit-box-shadow: 15px 15px 34px -16px rgba(255,255,255,0.64);
--moz-box-shadow: 15px 15px 34px -16px rgba(255,255,255,0.64);
-box-shadow: 15px 15px 34px -16px rgba(255,255,255,0.64);
+    -moz-box-shadow: 15px 15px 34px -16px rgba(255,255,255,0.64);
+    box-shadow: 15px 15px 34px -16px rgba(255,255,255,0.64);
 
 }
 .formclass{
@@ -193,7 +194,7 @@ box-shadow: 15px 15px 34px -16px rgba(255,255,255,0.64);
     align-items: center;  
     gap: 10px;
     width: 500px; 
-    height: 600px;
+    height: 400px;
 }
 
 .containermylink h2{
@@ -402,4 +403,25 @@ box-shadow: 15px 15px 34px -16px rgba(255,255,255,0.64);
     .rightsection{
         order:-1;
     }
+}
+
+@media screen and (max-width:500px){
+    .mainsection{
+        flex-direction: column;
+        align-items: center;
+    }
+    .rightsection{
+        order:-1;
+    }
+    .passwordframe{
+        width: 300px;
+    }
+    .containerWeather{
+        width: 400px;
+    }
+
+    .containermylink{
+        width: 300px; 
+    }
+
 }

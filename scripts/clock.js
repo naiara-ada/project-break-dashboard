@@ -7,9 +7,7 @@ const getactualPage = ()=>{
     let URLactual = window.location;
     let indexpage;
     URLactual.pathname == '/project-break-dashboard/clock.html' ? indexpage = false : indexpage = true;
-
     return indexpage;
-
 }
 
 const getTime = () =>{
@@ -37,8 +35,7 @@ const getTime = () =>{
     let indexpage = getactualPage();
     if(!indexpage){ 
         timePhraseClass[0].textContent = getPhrase(hours, minutes)   
-    }
-    
+    }    
 }
 
 const getPhrase = (hours, minutes)=>{
@@ -58,8 +55,7 @@ const getPhrase = (hours, minutes)=>{
         return phrase[5]
     }else{
         return phrase[6]
-    }  
-    
+    }      
 }
 
 getTime();
