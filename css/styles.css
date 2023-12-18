@@ -63,10 +63,14 @@ body{
 }
 .mainsection{
     display: flex;
-    
+    justify-content: center;
+    padding-top: 20px;
+    gap: 20px;  
 }
+
 .headerclass{
     display: flex;
+    align-content: center;
     gap: 15px;
     padding: 15px;
     height: 80px;
@@ -74,12 +78,26 @@ body{
 .headerclass a{
     font-size: 25px;
 }
+.headerclass a:hover{
+    opacity: 75%;
+}
 .sectionclass{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 500px ;
+    height: 600px ;
+}
+.rightsection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+
+/* CLOCK */
+
+.clocksection{
+    padding: 15px;
 }
 .containerclock{
     display: flex;
@@ -104,22 +122,29 @@ box-shadow: 15px 15px 34px -16px rgba(255,255,255,0.64);
 .dateClass{
     font-size: 20px;
 }
+
+
+/* PASSWORD */
 .containerPass{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 15px
+    gap: 15px;
+    height: 300px;
     
 }
 .passwordframe{
     display: flex;
     flex-direction: column;
     gap: 15px;
-    width: 420px;
+    width: 400px;
     padding: 20px;
     background-color: #66656596;
     border-radius: 10px;
+    -webkit-box-shadow: 15px 15px 34px -16px rgba(255,255,255,0.64);
+-moz-box-shadow: 15px 15px 34px -16px rgba(255,255,255,0.64);
+box-shadow: 15px 15px 34px -16px rgba(255,255,255,0.64);
 
 }
 .formclass{
@@ -165,14 +190,18 @@ box-shadow: 15px 15px 34px -16px rgba(255,255,255,0.64);
     flex-direction: column;
     align-items: center;  
     gap: 10px;
-    width: 80%; 
-    margin-left: 10px;
-    }
+    width: 500px; 
+    height: 600px;
+}
+
+.containermylink h2{
+    font-size: 24px;
+}
 
 .inputlink{
-    width: 100%;
+    width: 98%;
     height: 25px;
-    padding: 5px 5px 5px 30px;
+    padding: 5px;
     color:black;
     font-size: 18px;
     border-radius: 5px;
@@ -192,20 +221,33 @@ box-shadow: 15px 15px 34px -16px rgba(255,255,255,0.64);
 
 .containeritems{
     display: flex;
-    align-items: flex-start;
-    align-content: flex-start;
     flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;    
     gap: 10px;
     width: 100%;
     height: 500px;
+    overflow-y: auto;
         
 }
+.containeritems::-webkit-scrollbar {
+    width: 20px;
+}
+
+.containeritems::-webkit-scrollbar-track {
+    background: #d6d6d7;
+}
+.containeritems::-webkit-scrollbar-thumb {
+    background-color: #696C74;
+    border-radius: 20px;
+    width: 10px;   
+  }
 
 .itemclass{
     display: flex;
     justify-content: center;
     align-items: center;
-    width:150px;
+    width:140px;
     height: 50px;
     background-color: #66656596;
     border-radius: 10px;
@@ -227,45 +269,112 @@ box-shadow: 15px 15px 34px -16px rgba(255,255,255,0.64);
     cursor: pointer;
 }
 
+/* WEATHER */
+
 .containerWeather{
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
     gap:15px;
-    width: 500px;
-    height: 300px;
+    width: 400px;
+    height: 250px;
     background-color: #66656596;
     border-radius: 10px;
+    padding: 10px;
+    -webkit-box-shadow: 15px 15px 34px -16px rgba(255,255,255,0.64);
+-moz-box-shadow: 15px 15px 34px -16px rgba(255,255,255,0.64);
+box-shadow: 15px 15px 34px -16px rgba(255,255,255,0.64);
+
+}
+.locationID{
+    font-size: 18px;
+    
 }
 
-.conditionweather{
-    color:chocolate;
-}
-
-.currenteWeathercontainer{
+.currentWeatherID{
     display: flex;
     align-items: center;
     gap: 10px;
-    
 }
+
+.conditionweather{
+    color:#E5A207;
+}
+
 .currentgrades{
-    font-size: 40px;
+    font-size: 50px;
 }
 
 .weatheroptions{
     display: flex;
     flex-direction: column;
+    font-size: 14px;
+    margin-left: 20px;
 }
 
 .weatherperhourID{
     display: flex;
-    width: 490px;
+    width: 100%;
     gap: 5px;
     overflow-x: scroll;
     overflow-y: hidden;
 }
+
+.weatherperhourID::-webkit-scrollbar {
+    width: 10px;
+}
+
+.weatherperhourID::-webkit-scrollbar-track {
+    background: #d6d6d7;
+}
+.weatherperhourID::-webkit-scrollbar-thumb {
+    background-color: #696C74;
+    border-radius: 20px;
+    width: 10px;   
+  }
+
+
 .hourweatherclass{
     display: flex;
     flex-direction: column;
+}
+
+.thermo{
+    width: 40px;
+    height: 40px;
+}
+
+/* FOOTER*/
+
+.footerclass{
+    display: flex;
+    justify-content: flex-end;
+    
+}
+.footernav{
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    padding: 15px;
+    border-bottom: 1px solid #fff;
+    width: 50%;
+    
+}
+.footerclass span{
+    font-size: 30px;
+}
+
+.footerclass span:hover{
+    opacity: 75%;
+    animation: color 1s linear;
+}
+
+@media screen and (max-width:700px){
+    .mainsection{
+        flex-direction: column;
+        align-items: center;
+    }
+    .rightsection{
+        order:-1;
+    }
 }

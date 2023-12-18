@@ -14,20 +14,31 @@ const getactualPage = ()=>{
 }
 
 const getTime = () =>{
-    let today = new Date();
-    let seconds = today.getSeconds().toString();
-    let hours = today.getHours().toString();
-    let minutes = today.getMinutes().toString();
+    const today = new Date();
+    const seconds = today.getSeconds().toString();
+    const hours = today.getHours().toString();
+    const minutes = today.getMinutes().toString();
+    const day = today.getDate().toString();
+    let month = today.getMonth()+1;
+    month = month.toString();
+    let secondsCheck, minutesCheck, hoursCheck, dayCheck, monthCheck;
+       
+    //comprobamos que en caso de que la variable solo tenga 1 digito le añadimos un 0 por delante.
+    seconds.length == 1 ? secondsCheck = '0'+ seconds : secondsCheck = seconds 
+    minutes.length == 1 ? minutesCheck = '0'+ minutes : minutesCheck =  minutes
+    hours.length == 1 ? hoursCheck = '0'+ hours : hoursCheck =  hours
+    day.length == 1 ? dayCheck = '0' + day : dayCheck = day
+    month.length == 1 ? monthCheck = '0' + month : monthCheck= month
+ 
+    //pintamos en pantalla
+    timeclass[0].textContent = `${hoursCheck}:${minutesCheck}:${secondsCheck}`
+   dateClass[0].textContent  =`${weeksDay[today.getDay()]}, ${dayCheck}/${monthCheck}/${today.getFullYear()}`  
+    
+   //comprobamos de si estamos en la pagina index o la del clock para que aparezca o no la frase.
     let indexpage = getactualPage();
-
-    if(seconds.length == 1) {seconds = '0'+seconds; }
-    if(minutes.length ==1)  {minutes = '0' + minutes; }  
-    if(hours.length==1)     {hours = '0' + hours }
-    
-    timeclass[0].innerHTML = `${hours}:${minutes}:${seconds}`
-    dateClass[0].textContent  =`${weeksDay[today.getDay()]}, ${today.getDate()}/${today.getMonth()+1}/${today.getFullYear()}`  
-    
-    if(!indexpage){ timePhraseClass[0].textContent = getPhrase(hours, minutes)   }
+    if(!indexpage){ 
+        timePhraseClass[0].textContent = getPhrase(hours, minutes)   
+    }
     
 }
 
@@ -51,7 +62,6 @@ const getPhrase = (hours, minutes)=>{
     }  
     
 }
-
 
 getTime();
 const intervalTime = setInterval(getTime,1000);

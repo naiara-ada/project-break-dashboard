@@ -3,7 +3,6 @@ const currentWeatherID = document.getElementById('currentWeatherID');
 const weatherperhourID = document.getElementById('weatherperhourID');
 
 const printweatherhours = (hours)=>{
-    //let hora = hours[0].time.substring(hour[0].time.length - 5)
     let time;
     hours.forEach((hour)=>{        
         time = hour.time.substring(hour.time.length - 5)        
@@ -11,24 +10,22 @@ const printweatherhours = (hours)=>{
             <div class="hourweatherclass">
                 <p>${time}</p>
                 <img src="https:${hour.condition.icon}" alt="${hour.condition.text}" />
-                <p>${hour.temp_c}ºC</p>
+                <p class="conditionweather">${hour.temp_c}ºC</p>
             </div>
         `
     })
-
-  }
+}
 
 const printcurrentWeather = (current, day)=>{
     currentWeatherID.innerHTML = `
-    <div class="currenteWeathercontainer">
         <img src="https:${current.condition.icon}" alt="${current.condition.text}"/>
-        <p class="currentgrades">${current.temp_c}</p>
+        <p class="currentgrades">${current.temp_c}<img src="./assets/icons/thermometer100.png" alt="thermometer" class="thermo"></p>
         <div class="weatheroptions">
-            <p class="w-options">Precipitacion: ${day.daily_chance_of_rain}%</p>
-            <p class="w-options">Humedad: ${day.avghumidity}%</p>
-            <p class="w-options">Viento: ${day.maxwind_kph} Km/h</p>
+            <p>Precipitación: ${day.daily_chance_of_rain}%</p>
+            <p>Humedad: ${day.avghumidity}%</p>
+            <p>Viento: ${day.maxwind_kph} Km/h</p>
         </div>
-    </div> `
+     `
 }
 
 const printLocation = (location, current)=>{
