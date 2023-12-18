@@ -417,11 +417,22 @@ box-shadow: 15px 15px 34px -16px rgba(255,255,255,0.64);
         width: 300px;
     }
     .containerWeather{
-        width: 400px;
+        width: 300px;
     }
 
     .containermylink{
         width: 300px; 
+    }
+    .containermylink h2{
+        font-size: 18px;
+    }
+    .containerclock{
+        width: 300px;
+    }        
+   
+    .timePhraseClass{
+        font-size: 12px;          
+       
     }
 
 }
