@@ -59,12 +59,12 @@ a{
 body{
     background-size: cover;
     background-repeat: no-repeat;
-    background-color: #000;
-    
+    background-color: #000;    
 }
+
 .mainsection{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     padding-top: 20px;
     gap: 20px;  
 }
@@ -100,6 +100,8 @@ body{
 /* CLOCK */
 
 .clocksection{
+    display: flex;
+    flex-direction: column;
     padding: 15px;
 }
 .containerclock{
@@ -280,7 +282,7 @@ box-shadow: 15px 15px 34px -16px rgba(255,255,255,0.64);
     
 }
 .inputcity{
-    width: 200px;
+    width: 215px;
     height: 40px;
     border-radius: 5px;
     font-family: 'Poppins', sans-serif;
@@ -431,8 +433,10 @@ box-shadow: 15px 15px 34px -16px rgba(255,255,255,0.64);
     }        
    
     .timePhraseClass{
-        font-size: 12px;          
-       
+        font-size: 12px;       
+    }
+    .selectcity{
+        margin-left: 30px;
     }
 
 }
