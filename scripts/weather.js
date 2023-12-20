@@ -1,14 +1,65 @@
 const locationID = document.getElementById('locationID');
 const currentWeatherID = document.getElementById('currentWeatherID');
 const weatherperhourID = document.getElementById('weatherperhourID');
+let localCity = localStorage.getItem('localCity');
+if (localCity == null){
+    localCity = 'Bermeo';
+    localStorage.setItem('localCity', localCity)
+}
+
+const printSelectCity = ()=>{
+    const selectcityID = document.getElementById('selectcityID');
+    selectcityID.innerHTML ='';
+    let selectCities = JSON.parse(localStorage.getItem('selectCities'));
+    if (selectCities===null){
+        selectCities=['Bermeo', 'Nueva Ciudad...'];        
+    }
+    console.log(selectCities);
+    selectCities.forEach((city)=>{
+        selectcityID.innerHTML +=`
+        <option value="${city}">${city}</option>`
+    })
+}
+
+// actualizamos el listado del selector con la nueva incorporación
+const updateSelectorCity =(newCity)=>{
+    let selectCities = JSON.parse(localStorage.getItem('selectCities'));
+    localStorage.setItem('localCity', newCity)
+    let newSelectCities =[];
+    if(selectCities===null){
+        selectCities =['Bermeo', 'Nueva Ciudad...'];        
+    }        
+    for (let i = 0; i< selectCities.length-1;i++){
+        newSelectCities.push(selectCities[i])
+    }
+    newSelectCities.push(newCity,'Nueva Ciudad...');
+    localStorage.setItem('selectCities', JSON.stringify(newSelectCities))
+    printSelectCity();    
+}
+
+//controlamos si ha elegido nueva ciudad para añadir nueva
+const checkCity = (city)=>{
+    console.log(city)
+    if(city == 'Nueva Ciudad...'){
+        const newCity = prompt('Añade una nueva ciudad');
+        getweather(newCity);
+        updateSelectorCity(newCity);
+    }else{
+        getweather(city);
+        localStorage.setItem('localCity', city)
+    }
+}
+
+
 
 //controlamos la pagina actual ya elegir la ciudad del tiempo solo esta disponible en la weather.html 
 let URLactual = window.location;
 if (URLactual.pathname == '/project-break-dashboard/weather.html'){
+    printSelectCity();
     const cityButtonID = document.getElementById('cityButtonID');
     cityButtonID.addEventListener('click', ()=>{
         const selectcityID = document.getElementById('selectcityID').value;
-        getweather(selectcityID)        
+        checkCity(selectcityID);            
     })
 }
 
@@ -66,5 +117,5 @@ const getweather = async (location)=>{
 
 }
 
-getweather('Bermeo')
+getweather(localCity)
 
