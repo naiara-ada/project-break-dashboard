@@ -443,4 +443,12 @@ box-shadow: 15px 15px 34px -16px rgba(255,255,255,0.64);
         margin-left: 30px;
     }
 
+    .currentgrades{
+        font-size: 40px;
+    }
+    .weatheroptions{
+        font-size: 10px;
+        margin-left: 10px;
+    }
+
 }
