@@ -39,12 +39,18 @@ const printlinks = () =>{
 btnLinkID.addEventListener('click', ()=>{
     const inputNameID = document.getElementById('inputNameID').value;
     const inputLinkID = document.getElementById('inputLinkID').value;
-    let listlinks = JSON.parse(localStorage.getItem('savedlinks'))
-    
-    if (inputLinkID !='' && inputNameID !=''){
+    let listlinks = JSON.parse(localStorage.getItem('savedlinks'));
+    // pasamos la URL a string y a minusculas
+    let inputLink = inputLinkID.toString().toLowerCase();
+        
+    if (inputLink !='' && inputNameID !=''){
+       //miramos si no tiene el http para añadirselo 
+       if (!inputLink.startsWith('http://') || !inputLink.startsWith('https://')) {
+        inputLink = 'http://' + inputLink
+        }               
         const newlink = {
             name: inputNameID,
-            link: inputLinkID
+            link: inputLink
         }
         
         listlinks == null ? listlinks = [newlink] : listlinks.push(newlink)
